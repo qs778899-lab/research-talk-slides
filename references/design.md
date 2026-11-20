@@ -39,11 +39,26 @@ Read spatial alignment as an implied statement. Matching columns, proximity, sha
 
 ## Motion
 
-Use numbered reveal steps only where they improve reasoning. One click should express one conceptual addition. Preserve already revealed components and keep the layout fixed. Avoid gratuitous transforms and long transitions. HTML videos are muted, looped, and paused off-screen. Playback failure leaves a poster and a visible play control. Respect reduced motion by disabling transitions and autoplay. Slides remain understandable with every reveal visible and videos replaced by posters.
+Use numbered build steps only where they improve reasoning. One click should change one part of the argument: add evidence, compare alternatives, explain a relationship, or state its implication. Keep useful context visible. Stable anchors help the audience track an object, but do not forbid purposeful reflow: an established example can shrink to make room for its explanation. Avoid gratuitous transforms and long transitions. HTML videos are muted, looped, and paused off-screen. Playback failure leaves a poster and a visible play control. Respect reduced motion by disabling transitions and autoplay. Slides remain understandable in their complete static view with videos replaced by posters.
 
 For a mechanism, use `ghost: true` to show its pending structure faintly in place, then use `focusStep` to emphasize the part currently being explained. Keep nodes and connectors at stable positions. Reveal a missing dependency only when the explanation introduces it; avoid leaving an arrow detached from its source or destination at an intermediate step. Inspect the full sequence, the print view, and the editable slide's final static state.
 
 Choose video posters by inspecting the actual clip. Select a representative moment that makes the nearby claim understandable, and retain enough context to interpret the action. A fixed offset used for every clip may capture setup, a transition, or an unrepresentative pose. Check posters separately because they are the evidence seen in static exports and when autoplay is unavailable.
+
+### Build the explanation inside the page
+
+Review the reference as a time sequence, not just a collection of screenshots. Separate authored changes to labels, graphics, and layout from motion inside a demonstration video. A looping robot clip does not by itself provide a sequence of explanatory builds. Observed excerpt-relative examples include moving column focus around 124–140 seconds, the component and loop construction around 192–210 seconds, and a metric replacement followed by layout reflow around 294–305 seconds. The recording establishes the visual result, not which authoring application or animation mechanism produced it.
+
+Write a short beat sheet for each core page. Usually two to five meaningful states suffice; a complete feedback mechanism may need more, while a demonstration may need only one. Do not add an identical number of clicks to every page. Use a small vocabulary deliberately:
+
+- Establish a whole picture, then move a temporary frame or emphasis through its parts.
+- Build a mechanism inside a component: input, intermediate representation, relation direction, feedback loop, implication.
+- Retire a temporary label or guide when its job is done. Replacement can be clearer than permanent accumulation.
+- Keep comparison axes and underlying values fixed while revealing matched data groups. Never invent intermediate values or imply new measurements by tweening bar lengths.
+- Move or resize an existing visual only to create room for the next explanatory unit, keeping its identity and aspect ratio recognizable.
+- End with a coherent view that can be read without the animation. Define a separate static base for printing and editable exports so temporary overlays do not accumulate.
+
+Inspect every state in both directions. Check that arrows terminate at visible nodes, emphasis does not imply an unsupported causal claim, overlays do not hide legends or conditions, and a return click restores the earlier state. Keep per-build speaking cues in notes rather than adding control instructions to the slide canvas. Check the no-motion alternative as well as the timed transition.
 
 ## Narrative
 

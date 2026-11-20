@@ -15,6 +15,7 @@ export async function appendSlides(presentation, deck, {loadAsset, start=0, end=
       return shape;
     };
     for(const e of page.elements){
+      if(e.static===false)continue;
       const position={left:e.x,top:e.y,width:e.w,height:e.h};
       if(e.type==='text')textbox(e);
       else if(e.type==='rect'||e.type==='line')slide.shapes.add({geometry:'rect',position,fill:e.fill??e.color??theme.light,line:e.stroke?{fill:e.stroke,width:2}:noLine});
@@ -30,7 +31,7 @@ export async function appendSlides(presentation, deck, {loadAsset, start=0, end=
         slide.images.add({blob:buffer,contentType:/\.png$/i.test(relative)?'image/png':'image/jpeg',alt:e.alt??'',position,fit:e.fit??'contain'});
         if(e.type==='video'&&e.href)textbox({x:e.x+e.w-175,y:e.y+e.h-30,w:165,h:26,text:'▶ 查看演示',size:19,color:theme.blue,href:e.href});
       }else if(e.type==='chart'){
-        const max=e.max??Math.max(...e.series.flatMap(s=>s.values))*1.15;
+        const max=e.max??(Math.max(...e.series.flatMap(s=>s.values))*1.15||1);
         slide.charts.add('bar',{
           position,categories:[...e.categories].reverse(),
           series:e.series.map(s=>({name:s.name,values:[...s.values].reverse(),fill:s.fill??'#B9C0C5',...(e.highlight!=null?{points:[{idx:e.categories.length-1-e.highlight,fill:theme.blue}]}:{})})),
@@ -51,8 +52,8 @@ export async function appendSlides(presentation, deck, {loadAsset, start=0, end=
       }
     }
     textbox({x:width-130,y:height-40,w:90,h:22,text:`${String(i+1).padStart(2,'0')}${page.appendix?' / 备份':''}`,size:16,color:'#9CA3A9',align:'right'});
-    const media=page.elements.filter(e=>e.type==='video').map(e=>`Video: ${e.src}${e.href?' | '+e.href:''} (HTML plays the clip; this slide uses its poster.)`);
-    slide.speakerNotes.text=[page.notes??'',...(page.sources??[]),...media].filter(Boolean).join('\n\n');
+    const media=page.elements.filter(e=>e.type==='video'&&e.static!==false).map(e=>`Video: ${e.src}${e.href?' | '+e.href:''} (HTML plays the clip; this slide uses its poster.)`);
+    slide.speakerNotes.text=[page.notes??'',...(page.builds??[]).map((b,j)=>`Build ${j+1}${b.label?': '+b.label:''}${b.note?' — '+b.note:''}`),...(page.sources??[]),...media].filter(Boolean).join('\n\n');
   }
   return {start,end,count:end-start};
 }

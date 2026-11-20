@@ -21,7 +21,7 @@ Prepare `deck.json` and `assets/` in the private talk directory. Copy `examples/
 
 Controls: arrows/Space advance, Shift+Right skips remaining reveals, Home/End jump, N toggles notes, O toggles overview, F toggles fullscreen. Clicking media toggles playback. Print displays all slides and reveals, using video posters.
 
-The scene format includes `flow` for explicit polyline connections with open arrowheads. Use `ghost: true` to keep pending components faintly visible and `focusStep` to move emphasis through a stable layout. Both are presentation timing aids; print and editable slides show all elements fully. Field definitions and a fictional connection example are in [the project contract](references/project-contract.md).
+The scene format includes `flow` for explicit polyline connections with open arrowheads. A slide can have a sequence of `builds` with speaking cues. Combine progressive focus, temporary guide intervals, presentation-only visual states, and chart/table group reveals to explain more within the same page. Print and editable slides use the complete static base, omitting transient guides. Field definitions are in [the project contract](references/project-contract.md).
 
 ## Editable slide integration
 

@@ -1,19 +1,134 @@
 {
-  "title": "Lumen — fictional rendering example",
+  "title": "Lumen \u2014 fictional rendering example",
   "language": "en",
   "width": 1600,
   "height": 900,
   "fontFamily": "Arial",
   "slides": [
-    {"id":"cover","title":"Lumen","notes":"Entirely fictional example. No empirical or scientific claim is made.","sources":[],"elements":[
-      {"type":"text","x":90,"y":160,"w":1400,"h":160,"text":"Lumen","size":130,"bold":true},
-      {"type":"text","x":95,"y":365,"w":1300,"h":100,"text":"A fictional study of colored lamps","size":48},
-      {"type":"text","x":95,"y":680,"w":1300,"h":60,"text":"SYNTHETIC EXAMPLE · NOT RESEARCH DATA","size":24,"color":"#747A80"}
-    ]},
-    {"id":"comparison","title":"A visible comparison","notes":"Invented values are used solely to test chart rendering.","sources":[],"elements":[
-      {"type":"text","x":90,"y":70,"w":1400,"h":100,"text":"A visible comparison","size":70,"bold":true},
-      {"type":"chart","x":100,"y":240,"w":1300,"h":420,"categories":["Toy setting A","Toy setting B"],"series":[{"name":"Invented score","values":[30,60]}],"highlight":1,"max":100,"labelWidth":280,"step":1},
-      {"type":"text","x":95,"y":760,"w":1300,"h":50,"text":"Fictional values; no real-world interpretation.","size":24,"color":"#747A80"}
-    ]}
+    {
+      "id": "cover",
+      "title": "Lumen",
+      "notes": "Entirely fictional example. No empirical or scientific claim is made.",
+      "sources": [],
+      "elements": [
+        {
+          "type": "text",
+          "x": 90,
+          "y": 160,
+          "w": 1400,
+          "h": 160,
+          "text": "Lumen",
+          "size": 130,
+          "bold": true
+        },
+        {
+          "type": "text",
+          "x": 95,
+          "y": 365,
+          "w": 1300,
+          "h": 100,
+          "text": "A fictional study of colored lamps",
+          "size": 48
+        },
+        {
+          "type": "text",
+          "x": 95,
+          "y": 680,
+          "w": 1300,
+          "h": 60,
+          "text": "SYNTHETIC EXAMPLE \u00b7 NOT RESEARCH DATA",
+          "size": 24,
+          "color": "#747A80"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "A visible comparison",
+      "notes": "Invented values are used solely to test chart rendering.",
+      "sources": [],
+      "elements": [
+        {
+          "type": "text",
+          "x": 90,
+          "y": 70,
+          "w": 1400,
+          "h": 100,
+          "text": "A visible comparison",
+          "size": 70,
+          "bold": true
+        },
+        {
+          "type": "chart",
+          "x": 100,
+          "y": 240,
+          "w": 1300,
+          "h": 420,
+          "categories": [
+            "Toy setting A",
+            "Toy setting B"
+          ],
+          "series": [
+            {
+              "name": "Invented score",
+              "values": [
+                30,
+                60
+              ]
+            }
+          ],
+          "highlight": 1,
+          "max": 100,
+          "labelWidth": 280,
+          "step": 0,
+          "categorySteps": [
+            0,
+            1
+          ]
+        },
+        {
+          "type": "text",
+          "x": 95,
+          "y": 760,
+          "w": 1300,
+          "h": 50,
+          "text": "Fictional values; no real-world interpretation.",
+          "size": 24,
+          "color": "#747A80"
+        },
+        {
+          "type": "rect",
+          "x": 95,
+          "y": 255,
+          "w": 1310,
+          "h": 180,
+          "fill": "transparent",
+          "stroke": "#0877D1",
+          "step": 0,
+          "until": 1,
+          "static": false,
+          "states": [
+            {
+              "step": 1,
+              "y": 430
+            }
+          ]
+        }
+      ],
+      "builds": [
+        {
+          "label": "First toy setting",
+          "note": "Introduce one invented value with the full axis visible."
+        },
+        {
+          "label": "Matched comparison",
+          "note": "Reveal the other value without changing the axis."
+        },
+        {
+          "label": "Complete view",
+          "note": "Retire the guide and show the whole fictional example."
+        }
+      ]
+    }
   ]
 }

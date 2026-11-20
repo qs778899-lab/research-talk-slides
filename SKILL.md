@@ -19,7 +19,7 @@ Read [project contract](references/project-contract.md) before building. The ext
 2. Identify the central question, the author's design judgments, supporting mechanisms, and the evidence for each. Separate measured findings from intuitions, motivations, and qualitative examples.
 3. Write a slide-level storyboard in the private project. Include source provenance and speaking notes there. Keep assumptions, units, sample counts, and evaluation conditions attached to claims.
 4. Read [visual and motion language](references/design.md). Choose the visual evidence that explains each insight, then compose representative slides before the rest. Prefer real demonstrations and source figures. Rebuild quantitative evidence as editable charts; do not fabricate data to simplify a figure. Avoid consecutive pages that only restate abstract ideas.
-5. Author a shared scene document for HTML and editable slides. Use short titles and the minimum text needed on stage; put details and citations in notes. Source images can remain images. Keep methods, labels, tables, and data charts editable. Trace diagram dependencies, branches, merges, and feedback loops before adding reveal timing.
+5. Author a shared scene document for HTML and editable slides. Use short titles and the minimum text needed on stage; put details and citations in notes. Source images can remain images. Keep methods, labels, tables, and data charts editable. Trace diagram dependencies, branches, merges, and feedback loops, then write the page's beat sheet. Build inside components, shift emphasis, retire temporary guides, or reflow evidence when those changes advance the explanation; do not stop at whole-block fades.
 6. Run structural validation, render every slide, and inspect it. Check media playback, keyboard navigation, fragment sequence, and reduced-motion behavior in HTML. Check the exported slide file separately.
 
 ## Tools
@@ -31,7 +31,7 @@ Read [project contract](references/project-contract.md) before building. The ext
 
 For a live presentation session, use its existing presentation object. If that service is unavailable, use the available presentation authoring workflow to export a local editable file. The renderer deliberately does not bundle a proprietary presentation runtime.
 
-Use `flow` for editable connections with explicit geometry. `ghost` and `focusStep` support explanations that retain the full layout while shifting attention between its parts. See the project contract for their fields; print and editable-slide output show the complete static state.
+Use `flow` for editable connections with explicit geometry. `builds`, focus and visual states, reveal intervals, and internal chart/table groups support explanations within a page. See the project contract for their fields. Keep an explicit static base; print and editable-slide output omit transient presentation guides.
 
 ## Review
 
