@@ -8,12 +8,15 @@ The source talk uses a white canvas, large black sans-serif headlines, gray seco
 
 These are observations of the slides, not the later subtitle styling or conference broadcast frame. No source screenshots, scientific content, or media are distributed here.
 
+In the supplied SuperMimic excerpt, approximately 195, 205, and 215 seconds from the **start of that excerpt** illustrate a useful progression: the same diagram stays in place as its stages gain emphasis and its loop becomes explicit. These are excerpt-relative review cues, not timestamps in the full linked recording. Learn the way attention moves through the argument as well as the colors and typography.
+
 ## Default theme
 
 - Canvas: 1600 × 900 (16:9). Safe area: 90 px horizontally, 64 px vertically.
 - Background: white. Ink: `#101214`. Secondary: `#747A80`. Accent: `#0877D1`.
-- Fonts: one available sans-serif family with the required character coverage. For Chinese projects, use an available CJK sans-serif face; preserve the choice in the project. Do not distribute proprietary system fonts.
+- Fonts: one available sans-serif family with the required character coverage. For Chinese projects, use an available CJK sans-serif face; preserve the choice in the project. Verify that a usable bold face actually renders in each output. Setting `bold: true` does not prove the exported text has the intended weight. Do not distribute proprietary system fonts.
 - Typical title: 62–76 px. Main text: 30–38 px. Secondary: 24–28 px. Sources: 17–20 px. Short impact words can be much larger.
+- Keep titles to a short question or claim. Put necessary conditions in a readable subtitle or caption instead of stretching the headline across the whole canvas.
 - Prefer one or two visual regions over a dashboard of boxes. Keep charts on white with a zero baseline for bars and direct labels. Use gray for context and blue for the comparison under discussion.
 - Keep real images proportional. Use contain for evidence. Cover crops require a deliberate inspection.
 
@@ -26,9 +29,21 @@ These are observations of the slides, not the later subtitle styling or conferen
 5. Comparison: matched visual conditions or an editable quantitative chart.
 6. Demonstration: nearly full-width media with a clear, minimal caption.
 
+## Visual reasoning
+
+Choose the visual evidence for an insight before polishing its headline. A meaningful frame, a measured comparison, or a clearly labeled conceptual diagram should carry the explanation. A large abstract sentence alone rarely explains a mechanism. Alternate statement pages with demonstrations, diagrams, and evidence; review consecutive pages so a run of abstract text does not interrupt the visual argument.
+
+Treat a method diagram as a claim about dependencies. Check where every input originates, where branches split, which outputs merge, what each arrow carries, and how feedback closes the loop. A reconstruction or auxiliary branch needs an explicit destination or a clear scope label. Simplification can omit implementation detail while preserving the dependencies needed to understand the claim. Keep speculative or conceptual relationships visibly distinct from measured evidence.
+
+Read spatial alignment as an implied statement. Matching columns, proximity, shared colors, and arrows can suggest one-to-one correspondence or causation even when the words do not. Use a common caption, separate row, or explicit matrix for relationships shared across multiple groups. Do not align unrelated categories solely to make a balanced grid.
+
 ## Motion
 
 Use numbered reveal steps only where they improve reasoning. One click should express one conceptual addition. Preserve already revealed components and keep the layout fixed. Avoid gratuitous transforms and long transitions. HTML videos are muted, looped, and paused off-screen. Playback failure leaves a poster and a visible play control. Respect reduced motion by disabling transitions and autoplay. Slides remain understandable with every reveal visible and videos replaced by posters.
+
+For a mechanism, use `ghost: true` to show its pending structure faintly in place, then use `focusStep` to emphasize the part currently being explained. Keep nodes and connectors at stable positions. Reveal a missing dependency only when the explanation introduces it; avoid leaving an arrow detached from its source or destination at an intermediate step. Inspect the full sequence, the print view, and the editable slide's final static state.
+
+Choose video posters by inspecting the actual clip. Select a representative moment that makes the nearby claim understandable, and retain enough context to interpret the action. A fixed offset used for every clip may capture setup, a transition, or an unrepresentative pose. Check posters separately because they are the evidence seen in static exports and when autoplay is unavailable.
 
 ## Narrative
 

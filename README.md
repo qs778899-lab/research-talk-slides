@@ -21,9 +21,17 @@ Prepare `deck.json` and `assets/` in the private talk directory. Copy `examples/
 
 Controls: arrows/Space advance, Shift+Right skips remaining reveals, Home/End jump, N toggles notes, O toggles overview, F toggles fullscreen. Clicking media toggles playback. Print displays all slides and reveals, using video posters.
 
+The scene format includes `flow` for explicit polyline connections with open arrowheads. Use `ghost: true` to keep pending components faintly visible and `focusStep` to move emphasis through a stable layout. Both are presentation timing aids; print and editable slides show all elements fully. Field definitions and a fictional connection example are in [the project contract](references/project-contract.md).
+
 ## Editable slide integration
 
 `src/editable.mjs` exports `appendSlides(presentation, deck, {loadAsset})` for `@oai/artifact-tool`. Use a compatible runtime provided by your host. Pass a live session's presentation or a local presentation object, then render and validate through that host. This optional runtime is not required for HTML and is not installed automatically. Native text, shapes, charts, and tables stay editable; videos use poster images and links.
+
+## Review the visual argument
+
+Start each insight with evidence the audience can see. Keep method dependencies, branches, merges, and feedback loops explicit. Alternate concise statements with visual explanations, and check that column alignment does not imply an unsupported relationship. Verify short headlines and real bold rendering in both outputs. Pick video posters from representative moments instead of using one fixed offset for every clip. The [design guide](references/design.md) explains these checks and how to use progressive focus.
+
+The test suite covers scene boundaries, isolated asset handling, flow geometry, and generated browser-program syntax. Automated checks complement a visual review of every slide and its reveal sequence.
 
 ## Isolation and publication
 

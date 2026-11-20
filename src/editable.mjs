@@ -1,4 +1,4 @@
-import {validateDeck,theme} from './scene.mjs';
+import {validateDeck,theme,flowPaths} from './scene.mjs';
 
 export async function appendSlides(presentation, deck, {loadAsset, start=0, end=deck.slides.length}={}) {
   validateDeck(deck);
@@ -18,6 +18,10 @@ export async function appendSlides(presentation, deck, {loadAsset, start=0, end=
       const position={left:e.x,top:e.y,width:e.w,height:e.h};
       if(e.type==='text')textbox(e);
       else if(e.type==='rect'||e.type==='line')slide.shapes.add({geometry:'rect',position,fill:e.fill??e.color??theme.light,line:e.stroke?{fill:e.stroke,width:2}:noLine});
+      else if(e.type==='flow')slide.shapes.add({
+        geometry:'custom',position,fill:'none',line:{style:'solid',fill:e.color??theme.gray,width:e.width??3},
+        customPaths:flowPaths(e).map(points=>({width:e.w,height:e.h,commands:points.map((p,j)=>({[j?'lineTo':'moveTo']:{x:p[0],y:p[1]}}))})),
+      });
       else if(e.type==='image'||e.type==='video'){
         const relative=e.type==='video'?e.poster:e.src;
         if(!loadAsset)throw new Error('An asset loader is required');
