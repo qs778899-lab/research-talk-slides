@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+dist/
+outputs/
+review/
+private/
+*.mp4
+*.mov
+*.pdf
+*.pptx
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.csv

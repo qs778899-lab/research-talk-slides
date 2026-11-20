@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Talk Slides"
+  short_description: "Create concise research talks with visual evidence"
+  default_prompt: "Use $research-talk-slides to build a visual research talk in a separate private project."
